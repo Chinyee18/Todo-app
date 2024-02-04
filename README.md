@@ -1,7 +1,7 @@
 
 ![todo](https://github.com/Chinyee18/Todo-app/assets/53111687/b62a4a4a-6f52-425f-a5e2-2a600a24f90c)
 
-[Preview Site!](https://todo-app-react-five-kappa.vercel.app/)
+[Preview Site!](https://todo-app-sand-six-54.vercel.app/)
 
 # Getting Started with Create React App
 
