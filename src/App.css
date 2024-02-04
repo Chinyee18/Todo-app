@@ -1,0 +1,130 @@
+
+:root{
+  --check: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --BrightBlue: hsl(220, 98%, 61%);
+  /* light */
+  --VeryLightGray2: hsl(0, 0%, 98%);
+  --VeryLightGrayishBlue2: hsl(236, 33%, 92%);
+  --LightGrayishBlue2: hsl(233, 11%, 84%);
+  --DarkGrayishBlue2: hsl(236, 9%, 61%);
+  --VeryDarkGrayishBlue2: hsl(235, 19%, 35%);
+  /* dark */
+  --VeryDarkBlue: hsl(235, 21%, 11%);
+  --VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+  --LightGrayishBlue: hsl(234, 39%, 85%);
+  --LightGrayishBlueHover: hsl(236, 33%, 92%);
+  --DarkGrayishBlue: hsl(234, 11%, 52%);
+  --VeryDarkGrayishBlue: hsl(233, 14%, 35%);
+  --VeryDarkGrayishBlue3: hsl(237, 14%, 26%);
+}
+
+body{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+input, p, div, span{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+}
+
+.app{
+  background-size: 100vw 40vh;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.app.light{
+  background-color: var(--VeryLightGrayishBlue2);
+  background-image: url(./Assets/images/bg-desktop-light.jpg);
+}
+.app.dark{
+  background-color: var(--VeryDarkBlue);
+  background-image: url(./Assets/images/bg-desktop-dark.jpg);
+}
+
+.container{
+    max-width: 500px;
+    margin: auto;
+}
+
+.container .header{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.icon{
+  width: 28px;
+  height: auto;
+}
+
+h1{
+  margin: 2.5rem 0;
+  font-size: 2.5rem;
+  color: #fff;
+  letter-spacing: 13px;
+}
+
+.attribution{
+  font-size: 12px;
+  text-align: center;
+  color: var(--DarkGrayishBlue);
+  bottom: 35px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.attribution a{
+  color: var(--DarkGrayishBlue);
+}
+
+.point{
+  cursor: pointer;
+}
+.mobile-only{
+  display: none;
+}
+.desktop-only{
+  display: block;
+}
+
+@media screen and (max-width: 520px) {
+  .app {
+    background-size: 100vw auto;
+  }
+  .app.light{
+    background-image: url(./Assets/images/bg-mobile-light.jpg);
+  }
+  .app.dark{
+    background-image: url(./Assets/images/bg-mobile-dark.jpg);
+  }
+  .container{
+    width: 90%;
+  }
+  .mobile-only{
+    display: block;
+  }
+  .desktop-only{
+    display: none;
+  }
+  h1{
+    font-size: 1.8rem;
+    letter-spacing: 10px;
+  }
+  .icon{
+    width: 24px;
+  }
+}
+
+
+
+

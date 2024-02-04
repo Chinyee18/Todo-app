@@ -1,0 +1,181 @@
+*, *:after, *:before {
+    box-sizing: border-box;
+  }
+
+.dark .todo-list, .dark .create-new{
+    background: var(--VeryDarkGrayishBlue3);
+    color: var(--LightGrayishBlue);
+    border-radius: 5px;
+}
+.light .todo-list, .light .create-new{
+    background: #fff;
+    color: var(--VeryDarkGrayishBlue2);
+    border-radius: 5px;
+}
+
+.create-new{
+    padding: 15px 20px;
+    margin-bottom: 1.2rem;
+}
+.todo, .action, .action-mobile{
+    padding: 15px 20px;
+}
+.dark .todo{
+    border-bottom: solid 1px var(--VeryDarkGrayishBlue);
+}
+.light .todo{
+    border-bottom: solid 1px var(--LightGrayishBlue2);
+}
+
+.checkbox {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    /* font-size: 15px; */
+}
+
+.checkbox > .cross{
+    margin-left: auto;
+    width: 14px;
+    height: 14px;
+}
+
+label {
+    margin: 0 10px;
+}
+
+.checkbox label:before {
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    content: '';
+    height: 20px;
+    width: 20px;
+    left: -5px;
+    position: absolute;
+    top: 0;
+}
+
+.dark .checkbox label::before {
+    border: 1px solid transparent;
+    background: 
+    linear-gradient(var(--VeryDarkGrayishBlue3), var(--VeryDarkGrayishBlue3)) padding-box,
+    var(--VeryDarkGrayishBlue) border-box;
+}
+.light .checkbox label::before {
+    border: 1px solid transparent;
+    background: 
+    linear-gradient(#fff, #fff) padding-box,
+    var(--LightGrayishBlue2) border-box;
+}
+.light .checkbox:hover > label::before{
+    border: 1px solid transparent;
+    background: 
+    linear-gradient(#fff, #fff) padding-box,
+    var(--check) border-box;
+}
+.dark .checkbox:hover > label::before{
+    background: 
+    linear-gradient(var(--VeryDarkGrayishBlue3), var(--VeryDarkGrayishBlue3)) padding-box,
+    var(--check) border-box;
+}
+
+.checkbox label:after {
+    border-top: none;
+    border-right: none;
+    cursor: pointer;
+    content: '';
+    height: 10px;
+    left: -1px;
+    opacity: 0;
+    position: absolute;
+    top: 4px;
+    transform: rotate(-45deg);
+    width: 15px;
+    transition: all 0.3s linear;
+    border: 3px solid #fff;
+}
+
+.checkbox input[type="checkbox"] {
+    visibility: hidden;
+}
+.checkbox input[type="checkbox"]:checked + label:before {
+    background: var(--check);
+    border: #fff;
+}
+.checkbox input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+.checkbox input[type="text"] {
+    height: 22px;
+    outline: none;
+    border: none;
+    background: none;
+    width: 430px;
+    font-size: 16px;
+}
+
+.dark .checkbox input[type="text"] {
+    color: var(--LightGrayishBlue);
+}
+
+.light .checkbox input[type="text"]{
+    color: var(--VeryDarkGrayishBlue2);
+}
+
+.dark ::placeholder{
+    color: var(--DarkGrayishBlue);
+}
+.light ::placeholder{
+    color: var(--DarkGrayishBlue2);
+}
+
+.dark .checkbox input[name="round-checkbox"]:checked ~ label {
+    color: var(--VeryDarkGrayishBlue);
+    text-decoration:line-through;
+    text-decoration-color:var(--DarkGrayishBlue);
+}
+
+.light .checkbox input[name="round-checkbox"]:checked ~ label {
+    color: var(--LightGrayishBlue2);
+    text-decoration:line-through;
+    text-decoration-color:var(--DarkGrayishBlue2);
+}
+
+.action{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+.dark .action, .dark .action-mobile{
+    color: var(--DarkGrayishBlue);
+}
+.light .action, .light .action-mobile{
+    color: var(--DarkGrayishBlue2);
+}
+
+.action .point span{
+    margin-left: 7px;
+    margin-right: 7px;
+}
+.action .point span:active, .action .point span.active{
+    color:var(--BrightBlue);
+}
+
+@media screen and (max-width: 520px) {
+    .checkbox input[type="text"] {
+        width: 250px;
+    }
+    .todo-list.mobile-only{
+        margin-top: 1rem;
+    }
+    .todo-list.mobile-only .action-mobile {
+       display: flex;
+       justify-content: center;
+       gap: 8px;
+    }
+    .action-mobile span.active{
+        color:var(--BrightBlue);
+    }
+}
