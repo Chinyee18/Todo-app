@@ -109,7 +109,7 @@ const Todo = () => {
               <div className='todo' key={key}>
                 <div className='checkbox point'>
                   <input type="checkbox" onChange={()=>toggleCheck(item)} name="round-checkbox" id={`round-checkbox-${item.id}`} />
-                  <label for={`round-checkbox-${item.id}`}>{item.id}{item.todo}</label>
+                  <label for={`round-checkbox-${item.id}`}>{item.todo}</label>
                   <img src={Cross} className="cross point" onClick={() => deleteTodo(item.id)}/>
                 </div>
               </div>
