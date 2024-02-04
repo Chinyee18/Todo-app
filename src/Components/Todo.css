@@ -6,16 +6,19 @@
     background: var(--VeryDarkGrayishBlue3);
     color: var(--LightGrayishBlue);
     border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .light .todo-list, .light .create-new{
     background: #fff;
     color: var(--VeryDarkGrayishBlue2);
     border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .create-new{
     padding: 15px 20px;
     margin-bottom: 1.2rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .todo, .action, .action-mobile{
     padding: 15px 20px;
@@ -82,19 +85,19 @@ label {
 }
 
 .checkbox label:after {
-    border-top: none;
-    border-right: none;
-    cursor: pointer;
     content: '';
-    height: 10px;
-    left: -1px;
-    opacity: 0;
+    display: block;
     position: absolute;
-    top: 4px;
-    transform: rotate(-45deg);
-    width: 15px;
+    top: 3px;
+    left: 2px;
+    width: 6px;
+    height: 11px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
     transition: all 0.3s linear;
-    border: 3px solid #fff;
+    cursor: pointer;
+    opacity: 0;
 }
 
 .checkbox input[type="checkbox"] {
@@ -161,6 +164,19 @@ label {
 }
 .action .point span:active, .action .point span.active{
     color:var(--BrightBlue);
+}
+
+.btn-add{
+    padding: 6px 8px 3px 8px;
+    cursor: pointer;
+	outline: inherit;
+    background-color: var(--BrightBlue);
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    font-family: inherit;
+    border-radius: 3px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 @media screen and (max-width: 520px) {

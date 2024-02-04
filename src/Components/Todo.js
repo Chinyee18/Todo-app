@@ -16,7 +16,6 @@ const Todo = () => {
     setData(prevList => [...prevList,{todo: state.value, completed:false, id:count}]);
     //clear inputs in create new inputs
     setState({value:''});
-    document.getElementById('round-checkbox-create-new').checked = false;
     setCount(count + 1);
   }
 
@@ -94,10 +93,8 @@ const Todo = () => {
       {/* create new */}
       <div className='create-new'>
         <div className='checkbox'>
-          <input type="checkbox" disabled={!state.value} name="round-checkbox-create-new" id="round-checkbox-create-new" onClick={() => createNewTodo(state.value)}/>
-          <label for="round-checkbox-create-new">
-            <input type="text" name="newTodo" value={state.value} onChange={(e)=>handleChange(e)} id="newTodo" placeholder="Create a new todo..."  />
-          </label>
+          <input type="text" name="newTodo" value={state.value} onChange={(e)=>handleChange(e)} id="newTodo" placeholder="Create a new todo..."  />
+          <button className="btn-add" disabled={!state.value} onClick={() => createNewTodo(state.value)}>Add</button>
         </div>
       </div>
       {/* to do list*/}
@@ -118,6 +115,7 @@ const Todo = () => {
         }
         
         {/* action */}
+        {todoList.length > 0?
         <div className='action'>
           <div>{noOfActive}{noOfActive > 1?<span> items </span>:<span> item </span>}left</div>
           <div className="point desktop-only ">
@@ -126,7 +124,7 @@ const Todo = () => {
             <span onClick={filterCompleted} className={active == 'completed'?'active':''}>Completed</span>
           </div>
           <div className="point" onClick={clearCompleted}>Clear Completed</div>
-        </div>
+        </div>:<div></div>}
         
      </div>
      <div className='todo-list mobile-only'>
